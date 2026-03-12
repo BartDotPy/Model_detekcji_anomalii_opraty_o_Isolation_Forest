@@ -7,10 +7,10 @@
 
 
 graph TD
-    A[System OS /psutil/] -->|Data Stream| B[(SQLite Database)]
-    B -->|Historical Data| C{ML Model: Isolation Forest}
-    C -->|Inference| D[Anomaly Detection]
-    D -->|Visualize| E[Streamlit UI]
+    A["System OS (psutil)"] -->|Data Stream| B[("SQLite Database")]
+    B -->|Historical Data| C{"ML Model: Isolation Forest"}
+    C -->|Inference| D["Anomaly Detection"]
+    D -->|Visualize| E["Streamlit UI"]
     C -.->|Re-training| B
 
 
