@@ -1,3 +1,6 @@
+<img width="1901" height="882" alt="image" src="https://github.com/user-attachments/assets/a90658f1-3556-4c42-af36-1182e7bfd546" />
+
+
 Lekki system monitorowania parametrów systemowych (CPU, RAM) w czasie rzeczywistym, wykorzystujący uczenie nienadzorowane (Isolation Forest) do automatycznego wykrywania incydentów i anomalii wydajnościowych. Projekt powstał, aby rozwiązać problem wysokiej liczby fałszywych alarmów (False Positives) w tradycyjnych systemach progowych.
 
 Dzięki zastosowaniu ML jesteśmy w stanie dokonywać trafniejszych detekcji, ponieważ nie określamy sztywno progów anomalii, natomiast nasz model AI dopasowuje się do warunków pracy danego urządzenia.
