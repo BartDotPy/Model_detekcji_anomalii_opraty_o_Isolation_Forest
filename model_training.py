@@ -3,6 +3,9 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.ensemble import IsolationForest
 
+#eskport modelu
+import joblib
+
 #pobieramy naszą bazę danych
 conn = sqlite3.connect('monitor_systemu.db')
 df = pd.read_sql_query('SELECT * FROM pomiary', conn)
@@ -15,8 +18,10 @@ X = df[['cpu_usage', 'ram_usage']]
 #import modelu
 model = IsolationForest(contamination = 0.05, random_state=42)
 
+model.fit(X)
+
 #nowa kategoria
-df['anomaly_score'] = model.fit_predict(X)
+df['anomaly_score'] = model.predict(X)
 norma = df[df['anomaly_score'] == 1]
 anomalie = df[df['anomaly_score'] == -1]
 
@@ -44,3 +49,7 @@ ax2.legend()
 
 plt.tight_layout() # Automatyczne dopasowanie marginesów
 plt.show()
+
+#zapis modelu
+joblib.dump(model, 'trained_isolation_forest.joblib')
+print('Zapisano model!')
